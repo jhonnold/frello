@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "./dist/server",
+        "target": "es6",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "lib": [
+            "es6",
+            "DOM"
+        ],
+        "allowJs": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react"
+    },
+    "include": [
+        "./server/**/*.ts"
+    ]
+}

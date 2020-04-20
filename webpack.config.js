@@ -17,21 +17,22 @@ module.exports = {
         },
     },
     entry: {
-        app: ['babel-polyfill', 'react-hot-loader/patch', './client/index.js'],
+        app: ['babel-polyfill', 'react-hot-loader/patch', './client/index.tsx'],
     },
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'dist', 'client'),
         filename: '[name].[hash].js',
     },
     resolve: {
         alias: {
             'react-dom': '@hot-loader/react-dom',
         },
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -39,6 +40,9 @@ module.exports = {
                         options: {
                             plugins: ['transform-class-properties'],
                         },
+                    },
+                    {
+                        loader: 'ts-loader',
                     },
                     {
                         loader: 'eslint-loader',

@@ -1,8 +1,8 @@
-const { createLogger, format, transports } = require('winston');
+import { createLogger, format, transports } from 'winston';
 
 const { combine, timestamp, printf } = format;
 
-module.exports = createLogger({
+export = createLogger({
     level: 'debug',
     transports: [new transports.Console()],
     exitOnError: false,
