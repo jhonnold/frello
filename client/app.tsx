@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
 import { hot } from 'react-hot-loader/root';
 
-const App: React.FC = (): ReactElement => <h1 className="title">Welcome to Frello!</h1>;
+import Board from './components/board';
+
+const App: React.FC = (): ReactElement => <Board title="board" />;
 
 export default hot(App);

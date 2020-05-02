@@ -1,0 +1,26 @@
+@import 'colors';
+
+.board {
+    @extend .container;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__columns {
+        @extend .columns;
+        flex: 1;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__column {
+        @extend .column;
+        border-right: 2px solid $white-ter;
+
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+}
