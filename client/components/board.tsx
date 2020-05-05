@@ -11,6 +11,8 @@ interface Props {
     title?: string;
 }
 
+const cardStates: string[] = ['todo', 'in progress', 'done', 'deployed'];
+
 const initialCards: Card[] = [
     { state: 'todo', text: 'create something new', id: uuidv4() },
     { state: 'in progress', text: 'working on something', id: uuidv4() },
@@ -42,7 +44,7 @@ const Board: React.FC<Props> = (props: Props): ReactElement => {
     };
 
     const renderColumns = (): ReactElement[] =>
-        Object.keys(grouped).map(state => {
+        cardStates.map(state => {
             const cards = grouped[state];
 
             return <Column title={state} cards={cards} key={state} onDrop={onDrop} />;

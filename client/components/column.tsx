@@ -12,7 +12,7 @@ interface Props {
 const Column: React.FC<Props> = (props: Props): ReactElement => {
     const { title = 'Untitled', cards = [], onDrop } = props;
 
-    const [_, dropRef] = useDrop({
+    const [, dropRef] = useDrop({
         accept: ['CARD'],
         drop(item: CardDragItem) {
             onDrop(item.id, title);
