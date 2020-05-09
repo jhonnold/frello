@@ -27,8 +27,8 @@ const Column: React.FC<Props> = (props: Props): ReactElement => {
     const renderCards = (): ReactElement[] => cards.map((c, i) => <Card {...c} key={i} />);
 
     return (
-        <div className="column board__column" ref={dropRef}>
-            <h3 className="title is-5">{title}</h3>
+        <div className="frello-column" ref={dropRef}>
+            <h3 className="frello-column__title">{title}</h3>
             {renderCards()}
         </div>
     );

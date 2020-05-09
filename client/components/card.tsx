@@ -14,8 +14,8 @@ const Card: React.FC<Props> = (props: Props): ReactElement => {
     });
 
     return (
-        <div className="card" ref={dragRef} style={{ opacity }}>
-            <div className="card-content">
+        <div className="frello-card" ref={dragRef} style={{ opacity }}>
+            <div className="frello-card__content">
                 <p>{text}</p>
             </div>
         </div>

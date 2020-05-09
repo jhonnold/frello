@@ -52,10 +52,9 @@ const Board: React.FC<Props> = (props: Props): ReactElement => {
 
     return (
         <DndProvider backend={dndBackend}>
-            <div className="board">
-                <h1 className="title is-3">{title}</h1>
-                <hr />
-                <div className="board__columns">{renderColumns()}</div>
+            <div className="frello-board">
+                <h1 className="frello-board__title">{title}</h1>
+                <div className="frello-board__wrapper">{renderColumns()}</div>
             </div>
         </DndProvider>
     );

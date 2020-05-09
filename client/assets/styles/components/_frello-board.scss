@@ -1,0 +1,16 @@
+.frello-board {
+    @extend .container;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__title {
+        @extend .title;
+        @extend .is-3;
+    }
+
+    &__wrapper {
+        @extend .tile;
+        @extend .is-ancestor;
+    }
+}

@@ -1,0 +1,11 @@
+.frello-card {
+    @extend .tile;
+    @extend .is-child;
+    @extend .card;
+
+    flex-grow: 0;
+
+    &__content {
+        @extend .card-content;
+    }
+}

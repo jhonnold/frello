@@ -8,7 +8,9 @@
 @import 'scheme';
 @import 'bulma/bulma.sass';
 
-@import 'board';
+@import 'components/frello-board';
+@import 'components/frello-column';
+@import 'components/frello-card';
 
 *,
 ::before,

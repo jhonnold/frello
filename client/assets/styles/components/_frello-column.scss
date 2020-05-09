@@ -1,0 +1,10 @@
+.frello-column {
+    @extend .tile;
+    @extend .is-parent;
+    @extend .is-vertical;
+
+    &__title {
+        @extend .title;
+        @extend .is-5;
+    }
+}
