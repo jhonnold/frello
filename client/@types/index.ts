@@ -1,7 +1,12 @@
 export interface Card {
     id: string;
-    state: string;
+    column: string;
     text: string;
+}
+
+export interface Column {
+    id: string;
+    name: string;
 }
 
 export interface CardDragItem {

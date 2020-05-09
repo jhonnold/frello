@@ -1,21 +1,21 @@
 import React, { ReactElement } from 'react';
 import { useDrop } from 'react-dnd';
 import Card from './card';
-import { Card as CardType, CardDragItem } from '../@types';
+import { Card as CardType, Column as ColumnType, CardDragItem } from '../@types';
 
 interface Props {
-    title?: string;
+    column: ColumnType;
     cards: CardType[];
     onDrop: (id: string, state: string) => void;
 }
 
 const Column: React.FC<Props> = (props: Props): ReactElement => {
-    const { title = 'Untitled', cards = [], onDrop } = props;
+    const { column, cards = [], onDrop } = props;
 
     const [, dropRef] = useDrop({
         accept: ['CARD'],
         drop(item: CardDragItem) {
-            onDrop(item.id, title);
+            onDrop(item.id, column.id);
         },
         collect: monitor => ({
             isOver: monitor.isOver(),
@@ -28,7 +28,7 @@ const Column: React.FC<Props> = (props: Props): ReactElement => {
 
     return (
         <div className="frello-column" ref={dropRef}>
-            <h3 className="frello-column__title">{title}</h3>
+            <h3 className="frello-column__title">{column.name}</h3>
             {renderCards()}
         </div>
     );
