@@ -1,10 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import onFinished from 'on-finished';
-import util from '../util';
+import { logger } from '../util';
 
-const { logger } = util;
-
-export = (req: Request, res: Response, next: NextFunction): void => {
+export default (req: Request, res: Response, next: NextFunction): void => {
     const startTime = new Date().getTime();
 
     const print = (): void => {

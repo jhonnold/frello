@@ -5,15 +5,12 @@
         "target": "es6",
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "lib": [
-            "es6",
-            "DOM"
-        ],
+        "sourceMap": true,
+        "lib": ["es6", "DOM"],
         "allowJs": true,
         "forceConsistentCasingInFileNames": true,
-        "jsx": "react"
+        "jsx": "react",
+        "typeRoots": ["./server/@types", "node_modules/@types"]
     },
-    "include": [
-        "./server/**/*.ts"
-    ]
+    "include": ["./server/**/*.ts"]
 }

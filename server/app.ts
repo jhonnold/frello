@@ -1,9 +1,10 @@
-import express, { Request, Response } from 'express';
+import 'dotenv/config';
+
+import express from 'express';
 import bp from 'body-parser';
 import compression from 'compression';
-import middleware from './middleware';
-
-const { logging } = middleware;
+import { logging, errorHandler, authenticate } from './middleware';
+import { authRoutes, usersRoutes } from './routes';
 
 const app = express();
 
@@ -11,8 +12,9 @@ app.use(logging);
 app.use(bp.json());
 app.use(compression());
 
-app.get('/', (_: Request, res: Response): void => {
-    res.send('<h1>Hello, World!</h1>');
-});
+app.use('/auth', authRoutes);
+app.use('/users', authenticate, usersRoutes);
 
-export = app;
+app.use(errorHandler);
+
+export default app;
