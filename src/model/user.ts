@@ -35,7 +35,10 @@ UserSchema.methods.validatePassword = async function (password): Promise<boolean
 };
 
 UserSchema.methods.generateToken = function (): string {
-    const token = jwt.sign({ username: this.username }, process.env['JWT_SECRET']);
+    const secret = process.env['JWT_SECRET'];
+    if (!secret) throw new Error('Unable to generate token!');
+
+    const token = jwt.sign({ username: this.username }, secret);
 
     return token;
 };
